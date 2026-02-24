@@ -1,0 +1,188 @@
+/* --- ABOUT SECTION BASE --- */
+.about-section {
+  padding: 150px 20px;
+  background: #05070a;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* --- LEVÁ STRANA: TEXT --- */
+.about-content {
+  flex: 1;
+  z-index: 2;
+}
+
+.about-tag {
+  color: var(--wolf-gold);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.about-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.about-description p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.about-description strong {
+  color: #fff;
+}
+
+/* --- MANIFEST ELEN --- */
+.elen-manifest {
+  margin: 40px 0;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--wolf-gold);
+}
+
+.manifest-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.elen-manifest h3 {
+  color: var(--wolf-gold);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.elen-manifest blockquote {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--wolf-silver);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- PRAVÁ STRANA: FOTKA (Fix "rozpláznutí") --- */
+.about-image-wrapper {
+  flex: 0 0 420px; /* Fixní šířka sloupce pro fotku */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-image-card {
+  width: 420px;      /* Pevná šířka portrétu */
+  height: 560px;     /* Pevná výška (poměr 3:4) */
+  position: relative; /* NUTNÉ pro Next.js Image fill */
+  border: 1px solid rgba(240, 195, 84, 0.2);
+  background: #111;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Selektor pro Next.js Image */
+.elen-main-img {
+  object-fit: cover !important; /* TOHLE JE KLÍČ - ořízne, neroztáhne */
+  object-position: center 20% !important; /* Zaměření na obličej */
+  filter: grayscale(100%) contrast(1.1);
+  transition: 0.8s ease;
+}
+
+.about-image-card:hover .elen-main-img {
+  filter: grayscale(0%) contrast(1);
+}
+
+/* --- HUD OVERLAY --- */
+.elen-stats-overlay {
+  position: absolute;
+  top: 30px;
+  right: -30px;
+  background: rgba(5, 7, 10, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-left: 3px solid var(--wolf-gold);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.stat-label { color: rgba(255, 255, 255, 0.4); }
+.stat-value { color: #fff; font-weight: bold; }
+.stat-value.pulse { color: var(--wolf-gold); animation: blink 1.5s infinite; }
+
+@keyframes blink { 50% { opacity: 0.3; } }
+
+/* --- TLAČÍTKO --- */
+.gold-btn {
+  display: inline-block;
+  padding: 18px 40px;
+  background: var(--wolf-gold);
+  color: #000;
+  text-decoration: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.4s;
+  border: 1px solid var(--wolf-gold);
+}
+
+.gold-btn:hover {
+  background: transparent;
+  color: var(--wolf-gold);
+  box-shadow: 0 0 30px rgba(240, 195, 84, 0.4);
+}
+
+/* --- RESPONZIVITA --- */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .about-image-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    justify-content: center;
+    order: -1; /* Fotka nad textem */
+  }
+
+  .about-image-card {
+    width: 320px; /* Menší na mobilu */
+    height: 420px;
+  }
+
+  .elen-stats-overlay {
+    right: 0;
+    top: -20px;
+  }
+}

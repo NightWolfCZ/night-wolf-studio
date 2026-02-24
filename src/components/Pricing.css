@@ -1,0 +1,164 @@
+.pricing-section {
+  padding: 100px 20px;
+  background: var(--night-black);
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+@media (max-width: 1024px) {
+  .pricing-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.price-card {
+  padding: 50px 30px;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(240, 195, 84, 0.1);
+  text-align: center;
+  width: 320px;
+  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- STYL PRO DOBU ZHOTOVENÍ --- */
+.delivery-tag {
+  font-size: 0.75rem;
+  color: var(--wolf-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+  margin: 0 auto 30px auto;
+  padding: 6px 15px;
+  background: rgba(240, 195, 84, 0.1);
+  border: 1px solid rgba(240, 195, 84, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: all 0.3s ease; /* Pro hladký nástup barev při hoveru */
+}
+
+/* AKTIVACE PULZOVÁNÍ PŘI HOVERU */
+.price-card:hover .delivery-tag {
+  animation: pulse-gold 2s infinite;
+  border-color: var(--wolf-gold);
+  background: rgba(240, 195, 84, 0.2);
+}
+
+.price-card.featured .delivery-tag {
+  background: rgba(240, 195, 84, 0.2);
+  border-color: var(--wolf-gold);
+  box-shadow: 0 0 15px rgba(240, 195, 84, 0.1);
+}
+
+/* Zvýrazněný balíček Alpha Pack */
+.price-card.featured {
+  transform: scale(1.05);
+  border: 2px solid var(--wolf-gold);
+  box-shadow: 0 0 30px rgba(240, 195, 84, 0.3);
+  background: linear-gradient(145deg, #0f172a, #05070a);
+  z-index: 2;
+}
+
+.price-card.featured:hover {
+  transform: scale(1.08) translateY(-10px);
+  box-shadow: 0 0 50px rgba(240, 195, 84, 0.5);
+}
+
+.tier-name {
+  color: var(--wolf-silver);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.price-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.tier-features {
+  list-style: none;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 2.2;
+  text-align: left;
+  flex-grow: 1; 
+}
+
+.tier-features li::before {
+  content: "•";
+  color: var(--wolf-gold);
+  margin-right: 10px;
+}
+
+/* Tlačítka */
+.gold-btn.small {
+  background: transparent;
+  border: 1px solid var(--wolf-gold);
+  color: var(--wolf-gold);
+  padding: 12px 24px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  align-self: center;
+  width: 100%;
+}
+
+.gold-btn.small:hover {
+  background: var(--wolf-gold);
+  color: #000;
+  box-shadow: 0 0 20px var(--wolf-gold);
+}
+
+.price-card.featured .gold-btn.small {
+  background: var(--wolf-gold);
+  color: #000;
+}
+
+.price-card.featured .gold-btn.small:hover {
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 30px #fff;
+}
+
+.price-card:not(.featured):hover {
+  background: linear-gradient(145deg, rgba(20, 27, 45, 0.6), rgba(10, 15, 25, 0.8));
+  box-shadow: 0 0 40px rgba(240, 195, 84, 0.15);
+  border-color: var(--wolf-gold);
+}
+
+/* ANIMACE PULZOVÁNÍ */
+@keyframes pulse-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(240, 195, 84, 0.4);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(240, 195, 84, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(240, 195, 84, 0);
+    transform: scale(1);
+  }
+}

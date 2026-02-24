@@ -1,0 +1,90 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 10%; /* Na startu je Navbar velký a vzdušný */
+  z-index: 1000;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+}
+
+/* STAV PŘI SCROLLOVÁNÍ (Kompaktnější a modernější) */
+.navbar.scrolled {
+  padding: 15px 10%; /* Při scrollu se Navbar zúží - působí to dynamicky */
+  background: rgba(5, 7, 10, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(240, 195, 84, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-logo { 
+  display: flex; 
+  align-items: center; 
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.02); /* Logo při najetí jemně "pulzuje" */
+}
+
+.nav-logo span { 
+  color: var(--wolf-gold); 
+  font-weight: 900; 
+  text-transform: uppercase; 
+  letter-spacing: 3px; /* Trochu víc místa pro luxusnější dojem */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer !important; /* Tohle tam musí být */
+  pointer-events: auto !important;
+}
+
+/* Efekt podtržení u odkazů v menu */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--wolf-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: var(--wolf-gold);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.navbar.scrolled .nav-logo img {
+  height: 32px; /* Zmenšení loga při scrollu */
+}
+
+.logo-link:hover span {
+  filter: drop-shadow(0 0 8px var(--wolf-gold));
+}

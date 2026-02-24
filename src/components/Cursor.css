@@ -1,0 +1,14 @@
+.custom-cursor {
+  width: 20px; 
+  height: 20px;
+  background: var(--wolf-gold);
+  border: 2px solid var(--wolf-silver);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999999; /* Necháme raději vyšší */
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px var(--wolf-gold), 0 0 30px var(--silver-glow);
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+}

@@ -1,0 +1,64 @@
+/* Hero Sekce */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #111827 0%, #05070a 100%);
+  text-align: center;
+}
+
+/* Hlavní Kovový Titul s Pulsací */
+.main-title {
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  line-height: 1;
+  background: linear-gradient(
+    to bottom, 
+    #f0c354 20%, 
+    #8a6621 50%, 
+    #f0c354 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(240, 195, 84, 0.3));
+}
+
+@keyframes glowCycle {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(240, 195, 84, 0.4)); }
+  50% { filter: drop-shadow(0 0 35px var(--silver-glow)); }
+}
+
+.sub-title {
+  color: var(--wolf-gold);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 25px;
+  opacity: 0.5;
+  margin-top: 1rem;
+  padding-left: 25px;
+}
+
+/* Tlačítko */
+.gold-btn {
+  margin-top: 4rem;
+  padding: 1.2rem 3.5rem;
+  background: transparent;
+  border: 2px solid var(--wolf-gold);
+  color: var(--wolf-gold);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition: 0.4s;
+}
+
+.gold-btn:hover {
+  background: var(--wolf-gold);
+  color: black;
+  box-shadow: 0 0 40px rgba(240, 195, 84, 0.4);
+  border-color: var(--wolf-silver);
+  transform: translateY(-5px);
+}
