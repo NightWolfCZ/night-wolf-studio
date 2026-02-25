@@ -86,7 +86,7 @@ const Contact = () => {
           <div className="footer-line"></div>
           <div className="footer-flex">
             <div className="socials">
-              <a href="https://www.instagram.com/nightwolf_webstudio/">INSTAGRAM</a>
+              <a href="https://www.instagram.com/nightwolf.webstudio/">INSTAGRAM</a>
               <a href="#">LINKEDIN</a>
             </div>
             <p className="copyright">© 2026 NIGHT WOLF STUDIO. ALL RIGHTS RESERVED.</p>
