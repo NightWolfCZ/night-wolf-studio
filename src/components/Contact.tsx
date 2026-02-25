@@ -40,7 +40,7 @@ const Contact = () => {
             </div>
             
             {/* Zítra sem do action vložíme ID z Formspree */}
-            <form action="https://formspree.io/f/TVŮJ_KÓD" method="POST" className="terminal-form">
+            <form action="https://formspree.io/f/xlgwzdrj" method="POST" className="terminal-form">
               <div className="input-group">
                 <label>IDENT_NAME</label>
                 <input type="text" name="name" placeholder="Tvůj alias..." required />
