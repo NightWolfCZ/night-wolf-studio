@@ -62,6 +62,59 @@ const Contact = () => {
           </div>
         </div>
 
+        <section className="contact-section" style={{ backgroundColor: '#000', padding: '100px 20px' }}>
+  <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+    <h2 style={{ color: '#ca8a04', fontSize: '2.5rem', marginBottom: '40px' }}>LOV ZAČÍNÁ ZDE</h2>
+    
+    {/* Formulář - action doplníme zítra podle zvolené služby */}
+    <form action="https://formspree.io/f/TVŮJ_KÓD" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="VAŠE JMÉNO / FIRMA" 
+        required 
+        style={{ background: '#0a0a0a', border: '1px solid #1a1a1a', padding: '15px', color: '#fff', outline: 'none' }}
+      />
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="VÁŠ EMAIL" 
+        required 
+        style={{ background: '#0a0a0a', border: '1px solid #1a1a1a', padding: '15px', color: '#fff', outline: 'none' }}
+      />
+      <select 
+        name="package" 
+        style={{ background: '#0a0a0a', border: '1px solid #1a1a1a', padding: '15px', color: '#fff', outline: 'none' }}
+      >
+        <option value="lone-wolf">LONE WOLF (BASIC)</option>
+        <option value="pack-leader">PACK LEADER (STANDARD)</option>
+        <option value="alpha-predator">ALPHA PREDATOR (PREMIUM)</option>
+      </select>
+      <textarea 
+        name="message" 
+        placeholder="VAŠE VIZE" 
+        rows={5} 
+        style={{ background: '#0a0a0a', border: '1px solid #1a1a1a', padding: '15px', color: '#fff', outline: 'none' }}
+      ></textarea>
+      
+      <button 
+        type="submit" 
+        style={{ 
+          background: '#ca8a04', 
+          color: '#000', 
+          padding: '20px', 
+          fontWeight: 'bold', 
+          border: 'none', 
+          cursor: 'pointer',
+          textTransform: 'uppercase'
+        }}
+      >
+        ODESLAT POPTÁVKU
+      </button>
+    </form>
+  </div>
+</section>
+
         <div className="footer-mini">
           <div className="footer-line"></div>
           <div className="footer-flex">
