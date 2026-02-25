@@ -63,7 +63,7 @@ const Contact = () => {
                   outline: 'none',
                   appearance: 'none'
                 }}>
-                  <option value="none" style={{background: '#000'}}>-- VYBER ÚROVEŇ --</option>
+                  <option value="" disabled selected style={{background: '#000'}}>-- VYBER ÚROVEŇ --</option>
                   <option value="lone-wolf" style={{background: '#000'}}>LONE WOLF (BASIC)</option>
                   <option value="pack-leader" style={{background: '#000'}}>PACK LEADER (STANDARD)</option>
                   <option value="alpha-predator" style={{background: '#000'}}>ALPHA PREDATOR (PREMIUM)</option>
